@@ -1,7 +1,7 @@
 import type { Response } from "express";
 
 export function respondWithError(res: Response, code: number, message: string) {
-  respondWithJson(res, code, message);
+  respondWithJson(res, code, { error: message });
 }
 
 export function respondWithJson(res: Response, code: number, payLoad: any) {
