@@ -4,6 +4,7 @@ import { ForbiddenError } from "./api/errors.js";
 type Config = {
   api: APIConfig;
   db: DBConfig;
+  jwt: JWTConfig;
 };
 
 type APIConfig = {
@@ -15,6 +16,13 @@ type APIConfig = {
 type DBConfig = {
   url: string;
   migrationConfig: MigrationConfig;
+};
+
+type JWTConfig = {
+  defaultDuration: number;
+  refreshDuration: number;
+  secret: string;
+  issuer: string;
 };
 
 process.loadEnvFile();
@@ -32,6 +40,12 @@ export const config: Config = {
   db: {
     url: envOrThrow("DB_URL"),
     migrationConfig: migrationConfig,
+  },
+  jwt: {
+    defaultDuration: 60 * 60,
+    refreshDuration: 60 * 60 * 24 * 60 * 1000,
+    secret: envOrThrow("JWT_SECRET"),
+    issuer: "chirpy",
   },
 };
 
