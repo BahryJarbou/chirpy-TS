@@ -36,6 +36,27 @@
       "when": 1765920905684,
       "tag": "0004_hesitant_kid_colt",
       "breakpoints": true
+    },
+    {
+      "idx": 5,
+      "version": "7",
+      "when": 1766078407621,
+      "tag": "0005_cheerful_blade",
+      "breakpoints": true
+    },
+    {
+      "idx": 6,
+      "version": "7",
+      "when": 1766078477849,
+      "tag": "0006_broken_machine_man",
+      "breakpoints": true
+    },
+    {
+      "idx": 7,
+      "version": "7",
+      "when": 1766086849047,
+      "tag": "0007_chief_skaar",
+      "breakpoints": true
     }
   ]
 }

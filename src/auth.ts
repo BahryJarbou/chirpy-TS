@@ -77,3 +77,15 @@ export function makeRefreshToken() {
   const token = crypto.randomBytes(32);
   return token.toString("hex");
 }
+
+export function getAPIKey(req: Request) {
+  const authHeader = req.headers.authorization;
+  if (
+    !authHeader ||
+    authHeader.split(" ").length !== 2 ||
+    authHeader.split(" ")[0] !== "ApiKey"
+  ) {
+    throw new UnauthorizedError("401 forbidden");
+  }
+  return authHeader.split(" ")[1];
+}
